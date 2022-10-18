@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+
 from notes.views import home_page_redirect
 
 urlpatterns = [
@@ -9,5 +8,3 @@ urlpatterns = [
     path('api/v1/', include('notes.urls')),
     path('', home_page_redirect)
 ]
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
